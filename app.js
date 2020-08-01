@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const morgan = require("morgan");
 const cors = require("cors");
 const { ValidationError } = require("sequelize");
@@ -18,7 +19,7 @@ const app = express();
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(cors({ origin: true }));
-
+app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
 app.use("/", indexRouter);
 app.use("/users", userRouter);
 app.use("/shelters", shelterRouter);

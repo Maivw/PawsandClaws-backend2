@@ -4,6 +4,8 @@ const { check } = require("express-validator");
 const { asyncHandler, handleValidationErrors } = require("../utils");
 const { requireShelterAuth } = require("../auth");
 const db = require("../db/models");
+const upload = require("../upload");
+const _ = require("lodash");
 
 const router = express.Router();
 
@@ -24,10 +26,12 @@ router.get(
 	"/shelters/:id",
 	asyncHandler(async (req, res) => {
 		const shelterUserId = parseInt(req.params.id, 10);
+		// const { id } = req.body;
 		const pets = await Pet.findAll({
 			order: [["createdAt", "DESC"]],
 			include: [Breed, ShelterUser],
 			where: { shelterId: shelterUserId },
+			// where: { shelterId: id },
 		});
 		res.json({ pets });
 	})
@@ -79,16 +83,12 @@ const validatePet = [
 	check("description")
 		.exists({ checkFalsy: true })
 		.withMessage("Please provide a description for the pet"),
-	check("photo")
-		.exists({ checkFalsy: true })
-		.withMessage("Please provide a url link to the pet's photo")
-		.isURL()
-		.withMessage("Please provide a value URL"),
 	handleValidationErrors,
 ];
 
 router.post(
 	"/",
+	upload.single("photo"),
 	validatePet,
 	requireShelterAuth,
 	asyncHandler(async (req, res) => {
@@ -103,6 +103,10 @@ router.post(
 			isOkayPets,
 			isOkayKids,
 		} = req.body;
+		const isFile = _.get(req, "file.path", "");
+		const formatUrlFile = isFile ? `http://localhost:8080/${isFile}` : photo;
+		console.log("IMAGRe", photo);
+		console.log("ISFILE", isFile);
 		const pet = await Pet.create({
 			breedId,
 			petName,
@@ -110,7 +114,7 @@ router.post(
 			sex,
 			size,
 			description,
-			photo,
+			photo: formatUrlFile,
 			isAdopted: false,
 			isOkayPets,
 			isOkayKids,
@@ -119,6 +123,35 @@ router.post(
 		res.json({ pet });
 	})
 );
+
+// router.post(
+// 	"/",
+// 	upload.single("image_url"),
+// 	asyncHandler(async (req, res, next) => {
+// 		const { post_content, location, user_id, video_url, image_url } = req.body;
+// 		const isFile = _.get(req, "file.path", ""); // {res: {file {path : 'upload/file_name.png'}}}
+// 		const formatUrlFile = isFile
+// 			? `http://localhost:8080/${isFile}`
+// 			: image_url;
+// 		console.log("IMAGRe", image_url);
+// 		console.log("ISFILE", isFile);
+// 		let post = await Post.create({
+// 			post_content,
+// 			location,
+// 			user_id,
+// 			image_url: formatUrlFile,
+// 			video_url,
+// 		});
+// 		post = await Post.findOne({
+// 			where: {
+// 				id: post.id,
+// 			},
+// 			include: [Like, Comment, User],
+// 		});
+// 		// post.setDataValue("User", await post.getUser());
+// 		res.status(201).json({ post });
+// 	})
+// );
 
 router.put(
 	"/:id",
