@@ -12,12 +12,12 @@ module.exports = {
 				size: 3,
 				description: "Much doge. Very wow.",
 				photo:
-					"https://vignette.wikia.nocookie.net/dogelore/images/9/97/Doge.jpg/revision/latest?cb=20190205113053",
+					"https://images.pexels.com/photos/4587993/pexels-photo-4587993.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
 				isAdopted: false,
 				isOkayKids: true,
 				isOkayPets: true,
 				createdAt: new Date(),
-				updatedAt: new Date()
+				updatedAt: new Date(),
 			},
 			{
 				breedId: 2,
@@ -34,7 +34,7 @@ module.exports = {
 				isOkayKids: true,
 				isOkayPets: true,
 				createdAt: new Date(),
-				updatedAt: new Date()
+				updatedAt: new Date(),
 			},
 			{
 				breedId: 1,
@@ -50,7 +50,7 @@ module.exports = {
 				isOkayKids: true,
 				isOkayPets: true,
 				createdAt: new Date(),
-				updatedAt: new Date()
+				updatedAt: new Date(),
 			},
 			{
 				breedId: 7,
@@ -66,7 +66,7 @@ module.exports = {
 				isOkayKids: true,
 				isOkayPets: true,
 				createdAt: new Date(),
-				updatedAt: new Date()
+				updatedAt: new Date(),
 			},
 			{
 				breedId: 6,
@@ -82,7 +82,7 @@ module.exports = {
 				isOkayKids: true,
 				isOkayPets: true,
 				createdAt: new Date(),
-				updatedAt: new Date()
+				updatedAt: new Date(),
 			},
 			{
 				breedId: 11,
@@ -98,7 +98,7 @@ module.exports = {
 				isOkayKids: true,
 				isOkayPets: true,
 				createdAt: new Date(),
-				updatedAt: new Date()
+				updatedAt: new Date(),
 			},
 			{
 				breedId: 14,
@@ -114,7 +114,7 @@ module.exports = {
 				isOkayKids: true,
 				isOkayPets: true,
 				createdAt: new Date(),
-				updatedAt: new Date()
+				updatedAt: new Date(),
 			},
 			{
 				breedId: 19,
@@ -130,7 +130,7 @@ module.exports = {
 				isOkayKids: true,
 				isOkayPets: true,
 				createdAt: new Date(),
-				updatedAt: new Date()
+				updatedAt: new Date(),
 			},
 			{
 				breedId: 22,
@@ -146,7 +146,7 @@ module.exports = {
 				isOkayKids: true,
 				isOkayPets: true,
 				createdAt: new Date(),
-				updatedAt: new Date()
+				updatedAt: new Date(),
 			},
 			{
 				breedId: 22,
@@ -157,12 +157,12 @@ module.exports = {
 				size: 3,
 				description: "Much doge. Very wow.",
 				photo:
-					"https://d17fnq9dkz9hgj.cloudfront.net/uploads/2018/09/PF2015_009_Rue_FrontYard-768x512.jpg",
+					"https://images.pexels.com/photos/1078088/pexels-photo-1078088.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
 				isAdopted: false,
 				isOkayKids: true,
 				isOkayPets: true,
 				createdAt: new Date(),
-				updatedAt: new Date()
+				updatedAt: new Date(),
 			},
 			{
 				breedId: 22,
@@ -178,7 +178,7 @@ module.exports = {
 				isOkayKids: true,
 				isOkayPets: true,
 				createdAt: new Date(),
-				updatedAt: new Date()
+				updatedAt: new Date(),
 			},
 			{
 				breedId: 22,
@@ -194,7 +194,7 @@ module.exports = {
 				isOkayKids: true,
 				isOkayPets: true,
 				createdAt: new Date(),
-				updatedAt: new Date()
+				updatedAt: new Date(),
 			},
 			{
 				breedId: 22,
@@ -210,7 +210,7 @@ module.exports = {
 				isOkayKids: true,
 				isOkayPets: true,
 				createdAt: new Date(),
-				updatedAt: new Date()
+				updatedAt: new Date(),
 			},
 			{
 				breedId: 8,
@@ -226,7 +226,7 @@ module.exports = {
 				isOkayKids: true,
 				isOkayPets: true,
 				createdAt: new Date(),
-				updatedAt: new Date()
+				updatedAt: new Date(),
 			},
 			{
 				breedId: 10,
@@ -242,7 +242,7 @@ module.exports = {
 				isOkayKids: true,
 				isOkayPets: true,
 				createdAt: new Date(),
-				updatedAt: new Date()
+				updatedAt: new Date(),
 			},
 			{
 				breedId: 22,
@@ -258,7 +258,7 @@ module.exports = {
 				isOkayKids: true,
 				isOkayPets: true,
 				createdAt: new Date(),
-				updatedAt: new Date()
+				updatedAt: new Date(),
 			},
 			{
 				breedId: 22,
@@ -274,7 +274,7 @@ module.exports = {
 				isOkayKids: true,
 				isOkayPets: true,
 				createdAt: new Date(),
-				updatedAt: new Date()
+				updatedAt: new Date(),
 			},
 			{
 				breedId: 22,
@@ -290,7 +290,7 @@ module.exports = {
 				isOkayKids: true,
 				isOkayPets: true,
 				createdAt: new Date(),
-				updatedAt: new Date()
+				updatedAt: new Date(),
 			},
 			{
 				breedId: 20,
@@ -306,7 +306,7 @@ module.exports = {
 				isOkayKids: true,
 				isOkayPets: true,
 				createdAt: new Date(),
-				updatedAt: new Date()
+				updatedAt: new Date(),
 			},
 			{
 				breedId: 3,
@@ -322,7 +322,7 @@ module.exports = {
 				isOkayKids: true,
 				isOkayPets: true,
 				createdAt: new Date(),
-				updatedAt: new Date()
+				updatedAt: new Date(),
 			},
 			{
 				breedId: 22,
@@ -338,7 +338,7 @@ module.exports = {
 				isOkayKids: true,
 				isOkayPets: true,
 				createdAt: new Date(),
-				updatedAt: new Date()
+				updatedAt: new Date(),
 			},
 			{
 				breedId: 22,
@@ -354,7 +354,7 @@ module.exports = {
 				isOkayKids: true,
 				isOkayPets: true,
 				createdAt: new Date(),
-				updatedAt: new Date()
+				updatedAt: new Date(),
 			},
 			{
 				breedId: 13,
@@ -370,7 +370,7 @@ module.exports = {
 				isOkayKids: true,
 				isOkayPets: true,
 				createdAt: new Date(),
-				updatedAt: new Date()
+				updatedAt: new Date(),
 			},
 			{
 				breedId: 22,
@@ -386,7 +386,7 @@ module.exports = {
 				isOkayKids: true,
 				isOkayPets: true,
 				createdAt: new Date(),
-				updatedAt: new Date()
+				updatedAt: new Date(),
 			},
 			{
 				breedId: 22,
@@ -402,7 +402,7 @@ module.exports = {
 				isOkayKids: true,
 				isOkayPets: true,
 				createdAt: new Date(),
-				updatedAt: new Date()
+				updatedAt: new Date(),
 			},
 			{
 				breedId: 22,
@@ -418,7 +418,7 @@ module.exports = {
 				isOkayKids: true,
 				isOkayPets: true,
 				createdAt: new Date(),
-				updatedAt: new Date()
+				updatedAt: new Date(),
 			},
 			{
 				breedId: 16,
@@ -434,7 +434,7 @@ module.exports = {
 				isOkayKids: true,
 				isOkayPets: true,
 				createdAt: new Date(),
-				updatedAt: new Date()
+				updatedAt: new Date(),
 			},
 			{
 				breedId: 17,
@@ -450,7 +450,7 @@ module.exports = {
 				isOkayKids: true,
 				isOkayPets: true,
 				createdAt: new Date(),
-				updatedAt: new Date()
+				updatedAt: new Date(),
 			},
 			{
 				breedId: 5,
@@ -466,12 +466,12 @@ module.exports = {
 				isOkayKids: true,
 				isOkayPets: true,
 				createdAt: new Date(),
-				updatedAt: new Date()
-			}
+				updatedAt: new Date(),
+			},
 		]);
 	},
 
 	down: (queryInterface, Sequelize) => {
 		return queryInterface.bulkDelete("Pets", null, {});
-	}
+	},
 };

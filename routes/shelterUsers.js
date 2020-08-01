@@ -15,7 +15,7 @@ const router = express.Router();
 const { Pet, ShelterUser, AdoptionRequest, State } = db;
 
 router.get(
-	"/:id(\\d+)",
+	"/:id",
 	requireShelterAuth,
 	asyncHandler(async (req, res, next) => {
 		const shelterUserId = parseInt(req.params.id, 10);
@@ -58,17 +58,6 @@ const validateLoginShelter = [
 	check("password")
 		.exists({ checkFalsy: true })
 		.withMessage("Please provide a password."),
-	check("confirmPassword")
-		.exists({ checkFalsy: true })
-		.withMessage("Please provide a value for Confirm Password")
-		.isLength({ max: 50 })
-		.withMessage("Confirm Password must not be more than 50 characters long")
-		.custom((value, { req }) => {
-			if (value !== req.body.password) {
-				throw new Error("Confirm Password does not match Password");
-			}
-			return true;
-		}),
 	check("shelterName")
 		.exists({ checkFalsy: true })
 		.withMessage("Please provide a shelter name.")
@@ -133,7 +122,7 @@ router.post(
 );
 
 router.post(
-	"/token",
+	"/login",
 	asyncHandler(async (req, res, next) => {
 		const { email, password } = req.body;
 		const shelterUser = await ShelterUser.findOne({
