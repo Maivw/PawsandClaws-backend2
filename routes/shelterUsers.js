@@ -110,12 +110,13 @@ router.post(
 			zipCode,
 		});
 
-		const token = getShelterToken(user);
+		const tokenShelter = getShelterToken(user);
+		console.log("checkpost", tokenShelter);
 		const role = "Shelter";
 		res.status(201).json({
 			user: { id: user.id },
 			role,
-			token,
+			tokenShelter,
 			name: user.shelterName,
 		});
 	})
@@ -141,10 +142,10 @@ router.post(
 			err.errors = ["The provided credentials were invalid."];
 			return next(err);
 		}
-		const token = getShelterToken(shelterUser);
+		const tokenShelter = getShelterToken(shelterUser);
 		const role = "Shelter";
 		res.json({
-			token,
+			tokenShelter,
 			role,
 			user: { id: shelterUser.id },
 			name: shelterUser.shelterName,
