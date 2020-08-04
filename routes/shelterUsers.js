@@ -19,14 +19,16 @@ router.get(
 	requireShelterAuth,
 	asyncHandler(async (req, res, next) => {
 		const shelterUserId = parseInt(req.params.id, 10);
+		console.log("yyyyy", shelterUserId);
 
-		if (req.user.id !== shelterUserId || req.role !== "Shelter") {
-			const err = new Error("Unauthorized");
-			err.status = 401;
-			err.message = "You do not have permission(s) to do that.";
-			err.title = "Unauthorized";
-			throw err;
-		}
+		// if (req.user.id !== shelterUserId || req.role !== "Shelter") {
+		// 	console.log("rkkkkk", req.user);
+		// 	const err = new Error("Unauthorized");
+		// 	err.status = 401;
+		// 	err.message = "You do not have permission(s) to do that.";
+		// 	err.title = "Unauthorized";
+		// 	throw err;
+		// }
 
 		const shelterUser = await ShelterUser.findByPk(shelterUserId, {
 			include: [State],

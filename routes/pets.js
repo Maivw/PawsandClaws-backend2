@@ -124,35 +124,6 @@ router.post(
 	})
 );
 
-// router.post(
-// 	"/",
-// 	upload.single("image_url"),
-// 	asyncHandler(async (req, res, next) => {
-// 		const { post_content, location, user_id, video_url, image_url } = req.body;
-// 		const isFile = _.get(req, "file.path", ""); // {res: {file {path : 'upload/file_name.png'}}}
-// 		const formatUrlFile = isFile
-// 			? `http://localhost:8080/${isFile}`
-// 			: image_url;
-// 		console.log("IMAGRe", image_url);
-// 		console.log("ISFILE", isFile);
-// 		let post = await Post.create({
-// 			post_content,
-// 			location,
-// 			user_id,
-// 			image_url: formatUrlFile,
-// 			video_url,
-// 		});
-// 		post = await Post.findOne({
-// 			where: {
-// 				id: post.id,
-// 			},
-// 			include: [Like, Comment, User],
-// 		});
-// 		// post.setDataValue("User", await post.getUser());
-// 		res.status(201).json({ post });
-// 	})
-// );
-
 router.put(
 	"/:id",
 	handleValidationErrors,
@@ -163,13 +134,15 @@ router.put(
 				id: req.params.id,
 			},
 		});
-		if (req.user.id !== pet.shelterId) {
-			const err = new Error("Unauthorized");
-			err.status = 401;
-			err.message = "You are not authorized to edit this pet's information.";
-			err.title = "Unauthorized";
-			throw err;
-		}
+
+		console.log("backendId", pet);
+		// if (req.user.id !== pet.shelterId) {
+		// 	const err = new Error("Unauthorized");
+		// 	err.status = 401;
+		// 	err.message = "You are not authorized to edit this pet's information.";
+		// 	err.title = "Unauthorized";
+		// 	throw err;
+		// }
 		if (pet) {
 			await pet.update({
 				petName: req.body.petName,
