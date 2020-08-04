@@ -135,7 +135,6 @@ router.put(
 			},
 		});
 
-		console.log("backendId", pet);
 		// if (req.user.id !== pet.shelterId) {
 		// 	const err = new Error("Unauthorized");
 		// 	err.status = 401;
@@ -166,21 +165,25 @@ router.delete(
 	"/:id",
 	requireShelterAuth,
 	asyncHandler(async (req, res, next) => {
+		// const { id } = req.body;
+		const id = req.params.id;
+		console.log("bakkkkkk", id);
 		const pet = await Pet.findOne({
 			where: {
-				id: req.params.id,
+				// id: req.params.id,
+				id,
 			},
 		});
-		if (req.user.id !== pet.shelterId) {
-			const err = new Error("Unauthorized");
-			err.status = 401;
-			err.message = "You are not authorized to delete this pet.";
-			err.title = "Unauthorized";
-			throw err;
-		}
+		// if (req.user.id !== pet.shelterId) {
+		// 	const err = new Error("Unauthorized");
+		// 	err.status = 401;
+		// 	err.message = "You are not authorized to delete this pet.";
+		// 	err.title = "Unauthorized";
+		// 	throw err;
+		// }
 		if (pet) {
 			await pet.destroy();
-			res.json({ message: `Deleted pet with id of ${req.params.id}.` });
+			res.json({ message: `Deleted pet with id of ${req.params.id}.`, pet });
 		} else {
 			next(petNotFoundError(req.params.id));
 		}
