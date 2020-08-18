@@ -32,13 +32,13 @@ const getShelterToken = (user) => {
 };
 
 const restoreShelterUser = (req, res, next) => {
-	const { tokenShelter } = req;
+	const { token } = req;
 
-	if (!tokenShelter) {
+	if (!token) {
 		return next();
 	}
 
-	return jwt.verify(tokenShelter, secret, null, async (err, jwtPayload) => {
+	return jwt.verify(token, secret, null, async (err, jwtPayload) => {
 		if (err) {
 			err.status = 401;
 			return next(err);

@@ -92,6 +92,15 @@ router.post(
 	validatePet,
 	requireShelterAuth,
 	asyncHandler(async (req, res) => {
+		console.log("VVVV", req);
+		if (req.user === undefined) {
+			const err = new Error("Unauthorized");
+			err.status = 401;
+			err.message = "You must be logged in to do that.";
+			err.title = "Unauthorized";
+			throw err;
+		}
+		const shelterId = req.user.id;
 		const {
 			breedId,
 			petName,
@@ -118,7 +127,7 @@ router.post(
 			isAdopted: false,
 			isOkayPets,
 			isOkayKids,
-			shelterId: req.user.id,
+			shelterId,
 		});
 		res.json({ pet });
 	})
